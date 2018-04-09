@@ -1,0 +1,10 @@
+.idea/
+ShopOnSale.services/obj/
+ShopOnSale.services/bin/
+ShopOnSale.api/bin/
+ShopOnSale.api/obj/
+ShopOnSale.test.api/bin/
+ShopOnSale.test.api/obj/
+ShopOnSale.test.services/bin/
+ShopOnSale.test.services/obj/
+ShopOnSale.UI/node_modules/
