@@ -1,8 +1,9 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using ShopOnSale.services.DbModel;
+using ShopOnSale.services.Context;
 
 namespace ShopOnSale.api
 {
@@ -19,7 +20,7 @@ namespace ShopOnSale.api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
-            services.AddDbContext<ApplicationDbContext>();
+            services.AddDbContext<ApplicationDbContext>(option => option.UseInMemoryDatabase("myDB"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
