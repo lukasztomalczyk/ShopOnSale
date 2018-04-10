@@ -48,6 +48,8 @@ body {
     grid-area: nav-bar;
     width: 100%;
     height: 50px;
+    position: sticky;  /* myślałem ze to wystarczy  */
+    top: 50px;
 }
 
 .info {
