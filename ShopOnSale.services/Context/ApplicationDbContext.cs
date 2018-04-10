@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 
-namespace ShopOnSale.services.DbModel
+namespace ShopOnSale.services.Context
 {
     public class ApplicationDbContext : DbContext
     {
@@ -8,5 +8,7 @@ namespace ShopOnSale.services.DbModel
             : base(options)
         {
         }
+
+
     }
 }

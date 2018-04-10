@@ -1,11 +1,11 @@
-var gulp = require("gulp");
-var jsonServer = require("gulp-json-srv");
+const jsonServer = require('json-server')
+const server = jsonServer.create()
+const router = jsonServer.router('db.json')
+const middlewares = jsonServer.defaults()
 
-var server = jsonServer.create({
-    port: 3006 });
+server.use(middlewares)
+server.use(router)
+server.listen(3000, () => {
+  console.log('JSON Server is running')
+})
 
-gulp.task("default", function(){
-    return gulp.src("db.json")
-        .pipe(server.pipe());
-        console.log("server json działą");
-});
