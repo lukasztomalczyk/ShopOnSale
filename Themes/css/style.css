@@ -45,11 +45,15 @@ body {
 }
 
 .nav-bar {
-    grid-area: nav-bar;
-    width: 100%;
+    /* grid-area: nav-bar; */
+    margin-left: auto;  /*wyśrodkowanie na szybko*/
+    margin-right: auto;  /*wyśrodkowanie na szybko*/
+    z-index: 1000;  /*ustawiłem żeby było ponad wszystkie elemnty na stronie*/
+    width: 80%; /*zmienilem szerookosc na 80%*/
     height: 50px;
     position: sticky;  /* myślałem ze to wystarczy  */
     top: 50px;
+    background-color: cadetblue; /* dodalem kolor rzewbys widzial*/
 }
 
 .info {
