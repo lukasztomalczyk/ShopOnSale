@@ -5,7 +5,7 @@ using ShopOnSale.services.Models.Base;
 
 namespace ShopOnSale.services.Repository
 {
-    public class GenericRepository<T> : IGenericRepository<T> where T : Entity
+    public abstract class GenericRepository<T> : IGenericRepository<T> where T : Entity
     {
         private ApplicationDbContext _context;
         private DbSet<T> _dbSet;
