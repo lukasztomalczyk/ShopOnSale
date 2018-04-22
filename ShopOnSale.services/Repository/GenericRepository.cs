@@ -1,3 +1,4 @@
+using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using ShopOnSale.services.Context;
 using ShopOnSale.services.Interface;
@@ -18,6 +19,13 @@ namespace ShopOnSale.services.Repository
         public T GetById(int _id)
         {
             throw new System.NotImplementedException();
+        }
+
+        public virtual IQueryable<T> GetAll()
+        {
+
+            IQueryable<T> query = _dbSet;
+            return query;
         }
     }
 }
