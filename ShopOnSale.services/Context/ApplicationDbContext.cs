@@ -24,7 +24,7 @@ namespace ShopOnSale.services.Context
         {
             modelBuilder.ApplyConfiguration(new ProductsConfig());
             modelBuilder.Entity<ItemModel>().HasData(
-                new { Name = "Produkt 1", CategoryEnum.Electronics, Price = "12,00", PrctureSrc = "http://www.wp.pl"});
+                new { Id = 1, Name = "Produkt 1", Category = CategoryEnum.Electronics, Price = 12.00, PrctureSrc = "http://www.wp.pl"});
         }
     }
 }

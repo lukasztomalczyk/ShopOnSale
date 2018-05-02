@@ -6,7 +6,7 @@ using ShopOnSale.services.Models.Base;
 
 namespace ShopOnSale.services.Repository
 {
-    public abstract class GenericRepository<T> : IGenericRepository<T> where T : Entity
+    public class GenericRepository<T> : IGenericRepository<T> where T : Entity
     {
         private ApplicationDbContext _context;
         private DbSet<T> _dbSet;
@@ -16,14 +16,13 @@ namespace ShopOnSale.services.Repository
             this._context = context;
             this._dbSet = context.Set<T>();
         }
-        public T GetById(int _id)
+        public virtual T GetById(int _id)
         {
-            throw new System.NotImplementedException();
+           return _dbSet.SingleOrDefault(x => x.Id ==_id);
         }
 
         public virtual IQueryable<T> GetAll()
         {
-
             IQueryable<T> query = _dbSet;
             return query;
         }

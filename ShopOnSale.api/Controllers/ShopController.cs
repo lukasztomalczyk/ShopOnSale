@@ -1,25 +1,47 @@
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
-using ShopOnSale.services.Context.Config;
-using ShopOnSale.services.Models;
-using ShopOnSale.services.Repository;
+using ShopOnSale.services.Interface;
+using ShopOnSale.services.Models.ViewModels;
+using ShopOnSale.services.Services;
 
 namespace ShopOnSale.api.Controllers
 {
-    [Route("Products/ShowProducts")]
+   // [Produces("application/json")]
+    [Route("api/Shop/")]
     public class ShopController : Controller
     {
-        private ShopServices _shopServices;
+        private IShopServices _shopServices;
 
-        public ShopController(ShopServices shopServices)
+        public ShopController(IShopServices shopServices)
         {
             this._shopServices = shopServices;
         }
 
-        [HttpGet]
-        public IEnumerable<ItemModel> GetAllProducts()
+        [HttpGet("GetAllProducts")]
+        public IEnumerable<ViewItemModel> GetAllProducts()
         {
             return _shopServices.ShowAllProducts();
+        }
+        
+        [HttpGet("ok")]
+        public string ok()
+        {
+            return "ok";
+        }
+
+        [HttpGet("GetProduct/{_id:int}")]
+        public ViewItemModel GetProductItem(int _id)
+        {
+            var _item = _shopServices.GetById(_id);
+
+            if (_item != null)
+            {
+                return _item;
+            }
+            else
+            {
+                return null;
+            }
         }
     }
 }
