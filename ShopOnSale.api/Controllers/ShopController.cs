@@ -29,10 +29,10 @@ namespace ShopOnSale.api.Controllers
             return "ok";
         }
 
-        [HttpGet("GetProduct/{_id:int}")]
-        public ViewItemModel GetProductItem(int _id)
+        [HttpGet("GetProduct/{id:int}")]
+        public ViewItemModel GetProductItem(int id)
         {
-            var _item = _shopServices.GetById(_id);
+            var _item = _shopServices.GetById(id);
 
             if (_item != null)
             {
