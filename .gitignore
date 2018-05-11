@@ -9,3 +9,5 @@ ShopOnSale.test.services/bin/
 ShopOnSale.test.services/obj/
 ShopOnSale.UI/node_modules/
 Themes/node_modules/
+/.vs/ShopOnSale/v15
+/services/.vs/ShopOnSale/v15
