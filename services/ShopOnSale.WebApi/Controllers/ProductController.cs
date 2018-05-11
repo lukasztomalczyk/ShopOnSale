@@ -8,7 +8,7 @@ using ShopOnSale.Interface.Application;
 namespace ShopOnSale.WebApi.Controllers
 {
     [Produces("application/json")]
-    [Route("/api/[controler]/[acton]")]
+    [Route("/api/[controller]/[action]")]
     public class ProductController : Controller
     {
         [HttpPost]
