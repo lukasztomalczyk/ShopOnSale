@@ -16,7 +16,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "ShopOnSale.WebApi": {
+    "Testing": {
       "commandName": "Project",
       "launchBrowser": false,
       "environmentVariables": {
